@@ -36,21 +36,18 @@ function generatePassword() {
 
     lengthOp = parseInt(prompt("How long would you like your password? (Between 8-128 Characters)"));
     // parseInt(lengthOp);
-    if (!lengthOp < 8 || lengthOp > 128) {
-        parseInt(prompt("Please enter a positive value between 8-128"));
-    // } else if (lengthOp < 8 || lengthOp > 128) {
-    //   //this is checking to see if the parameter of length is met, if not it will ask to reassign a length??
-    //     lengthOp = parseInt(prompt("Between 8-128 please :)"));
-    }  else {
-        //Continues with 4 prompts once validated in length
+     if (lengthOp < 8 || lengthOp > 128) {
+        alert("Between 8-128 please :)");
+    } else {
         getUppercase = confirm("Would you like it to contain uppercase letters?");
         getLowercase = confirm("Would you like it to contain lowercase letters?");
         getNumber = confirm("Would you like it to contain any numbers?");
         getSymbols = confirm("Would you like it to contain any special characters?");
     };
+    
 
     if (!getLowercase && !getUppercase && !getNumber && !getSymbols){
-        alert("Someone is awfully picky...re-load the page and try again");
+        alert("Try Again");
     }
     //Chosing all 4 selections
     else if (getLowercase && getUppercase && getNumber && getSymbols){
